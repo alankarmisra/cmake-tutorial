@@ -12,6 +12,8 @@ CMake is a build system generator that allows you to create build scripts (like 
 - **`cmake` command**: Used to generate build files.
 - **`make` command**: Used to compile the project (on Unix-like systems).
 #### Code Sample
+
+1. Create a file `main.cpp`:
 ```cpp
 #include <iostream>
 int main() {
@@ -20,6 +22,7 @@ int main() {
 }
 ```
 
+2. Create a `CMakeLists.txt` file:
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -27,6 +30,7 @@ project(HelloWorld)
 add_executable(HelloWorld main.cpp)
 ```
 
+3. Build the project:
 ```bash
 mkdir build
 cd build
