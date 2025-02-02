@@ -15,6 +15,7 @@ CMake is a build system generator that allows you to create build scripts (like 
 
 1. Create a file `main.cpp`:
 ```cpp
+// main.cpp
 #include <iostream>
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -24,18 +25,19 @@ int main() {
 
 2. Create a `CMakeLists.txt` file:
 ```cmake
+# CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
 add_executable(HelloWorld main.cpp)
 ```
 
-3. Build the project:
+3. Build and run the project:
 ```bash
 mkdir build
 cd build
 cmake ..
-make
+cmake --build .
 ./HelloWorld
 ```
 
@@ -54,11 +56,6 @@ Hello, World!
 2. `add_executable` specifies the target executable name and associated source files.
 3. We create a `build` directory to separate the source from the build files.
 
-### Instructions
-- Create a new directory for your project.
-- Write the main.cpp and CMakeLists.txt files as shown.
-- Run the commands to build and run the program.
-
 ---
 
 ## Chapter 2: Variables and Options
@@ -73,14 +70,25 @@ CMake allows you to define variables and options to control the build process. V
 
 #### Code Sample
 
-1. Define a variable and use it:
+1. Continue using the files from the previous chapter. Edit the `CMakeLists.txt` file to define a variable and use it:
 ```cmake
+# CMakeLists.txt
 set(MY_VARIABLE "Hello, CMake!")
 message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
 ```
 
 2. Define an option:
 ```cmake
+# CMakeLists.txt
+cmake_minimum_required(VERSION 3.10)
+project(HelloWorld)
+
+add_executable(HelloWorld main.cpp)
+
+# --- ADD THESE LINES ---
+set(MY_VARIABLE "Hello, CMake!")
+message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
+
 option(ENABLE_FEATURE "Enable a feature" ON)
 if(ENABLE_FEATURE)
     message(STATUS "Feature is enabled")
@@ -91,7 +99,7 @@ endif()
 
 3. Build the project:
 ```bash
-cmake ..
+$ cmake ..
 ```
 You should see the status messages printed out on the terminal.
 ```bash
@@ -124,10 +132,6 @@ You should see the status messages printed out on the terminal.
 2. You can check if an option is enabled using `if(OPTION_NAME)`.
 3. `set` is for general-purpose variables (strings, paths, etc.), while `option` is specifically for boolean flags (`ON` or `OFF`) that can be toggled by the user.
 
-### Instructions
-- Add the set and option examples to your CMakeLists.txt.
-- Modify the ENABLE_FEATURE option to OFF and observe the output. 
-
 ---
 
 ## Chapter 3: Adding Libraries
@@ -141,13 +145,40 @@ CMake makes it easy to link libraries to your project. Libraries can be system l
 - **`target_link_libraries()`**: Links libraries to a target.
 
 #### Code Sample
+You can continue using the files from the previous chapter.
+
+1. Create a new file my_library.cpp with some dummy code
+```cpp
+// my_library.cpp
+void my_library_func() {
+  // noop
+}
+```
+
+2. Edit the `CMakeLists.txt`
 ```cmake
+# CMakeLists.txt 
+cmake_minimum_required(VERSION 3.10)
+project(HelloWorld)
+
+add_executable(HelloWorld main.cpp)
+
+set(MY_VARIABLE "Hello, CMake!")
+message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
+
+option(ENABLE_FEATURE "Enable a feature" ON)
+if(ENABLE_FEATURE)
+    message(STATUS "Feature is enabled")
+else()
+    message(STATUS "Feature is disabled")
+endif()
+
+# --- ADD THESE LINES ---
 find_package(Threads REQUIRED)
-add_executable(MyProgram main.cpp)
-target_link_libraries(MyProgram PRIVATE Threads::Threads)
+target_link_libraries(HelloWorld PRIVATE Threads::Threads)
 
 add_library(MyLibrary STATIC my_library.cpp)
-target_link_libraries(MyProgram PRIVATE MyLibrary)
+target_link_libraries(HelloWorld PRIVATE MyLibrary)
 ```
 
 ### Quiz
