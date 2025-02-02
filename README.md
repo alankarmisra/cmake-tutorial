@@ -278,21 +278,36 @@ Sometimes, your project depends on external libraries or tools that aren’t par
 - **Integration**: The external project’s targets can be used in your `CMakeLists.txt` as if they were part of your project.
 
 #### Code Sample
+1. Let's start with a fresh CMakeLists.txt file to keep things simple. You can continue using the files from the previous chapter, but replace the entire contents of the CMakeLists.txt to the one below. 
 ```cmake
-cmake_minimum_required(VERSION 3.14)
-project(ExternalProjectDemo)
+# CMakeLists.txt
+# ---- Replace everything with the text below -----
+cmake_minimum_required(VERSION 3.15)
+project(HelloWorld)
 
 include(FetchContent)
+# This declares the googletest repo but does not download it.
 FetchContent_Declare(
     googletest
     GIT_REPOSITORY https://github.com/google/googletest.git
     GIT_TAG release-1.12.1
 )
 
+# This downloads the googletest repo when you run `cmake ..`
 FetchContent_MakeAvailable(googletest)
 
-add_executable(MyProgram main.cpp)
-target_link_libraries(MyProgram PRIVATE gtest_main)
+add_executable(HelloWorld main.cpp)
+target_link_libraries(HelloWorld PRIVATE gtest_main)
+```
+
+2. Run cmake. This will download the googletest repo when it encounters `FetchContent_MakeAvailable`.
+```cmake
+cmake ..
+```
+
+3. Run the build
+```cmake
+cmake --build .
 ```
 
 ### Quiz
