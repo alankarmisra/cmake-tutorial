@@ -1,0 +1,1 @@
+void windows_function() {}
