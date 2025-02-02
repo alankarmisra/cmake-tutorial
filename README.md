@@ -39,6 +39,11 @@ make
 ./HelloWorld
 ```
 
+4. Review the output
+```bash
+Hello, World!
+```
+
 ### Quiz
 1. What is the purpose of `cmake_minimum_required`?
 2. What does `add_executable` do?
@@ -48,6 +53,11 @@ make
 1. The purpose of `cmake_minimum_required` is to specify the minimum CMake version required to compile. If the current version is lower, it will throw an error.
 2. `add_executable` specifies the target executable name and associated source files.
 3. We create a `build` directory to separate the source from the build files.
+
+### Instructions
+- Create a new directory for your project.
+- Write the main.cpp and CMakeLists.txt files as shown.
+- Run the commands to build and run the program.
 
 ---
 
@@ -62,16 +72,46 @@ CMake allows you to define variables and options to control the build process. V
 - **`if()`**: Used to conditionally execute CMake code.
 
 #### Code Sample
+
+1. Define a variable and use it:
 ```cmake
 set(MY_VARIABLE "Hello, CMake!")
 message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
+```
 
+2. Define an option:
+```cmake
 option(ENABLE_FEATURE "Enable a feature" ON)
 if(ENABLE_FEATURE)
     message(STATUS "Feature is enabled")
 else()
     message(STATUS "Feature is disabled")
 endif()
+```
+
+3. Build the project:
+```bash
+cmake ..
+```
+You should see the status messages printed out on the terminal.
+```bash
+-- MY_VARIABLE is set to Hello, CMake!
+-- Feature is enabled
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+...
+```
+
+4. Build the project again with the ENABLE_FEATURE turned off.
+```bash
+cmake .. -DENABLE_FEATURE=off
+```
+You should see the status messages printed out on the terminal.
+```bash
+-- MY_VARIABLE is set to Hello, CMake!
+-- Feature is disabled
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
 ```
 
 ### Quiz
@@ -83,6 +123,10 @@ endif()
 1. The `set` command assigns a value to a variable. This value can be a string, a path, a list, or even a complex expression.
 2. You can check if an option is enabled using `if(OPTION_NAME)`.
 3. `set` is for general-purpose variables (strings, paths, etc.), while `option` is specifically for boolean flags (`ON` or `OFF`) that can be toggled by the user.
+
+### Instructions
+- Add the set and option examples to your CMakeLists.txt.
+- Modify the ENABLE_FEATURE option to OFF and observe the output. 
 
 ---
 

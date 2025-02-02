@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.10)
+project(HelloWorld)
+
+add_executable(HelloWorld main.cpp)
+
+set(MY_VARIABLE "Hello, CMake!")
+message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
+
+option(ENABLE_FEATURE "Enable a feature" ON)
+if(ENABLE_FEATURE)
+    message(STATUS "Feature is enabled")
+else()
+    message(STATUS "Feature is disabled")
+endif()
