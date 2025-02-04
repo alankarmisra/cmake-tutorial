@@ -808,15 +808,15 @@ CMake has several advanced features that can make your build system more powerfu
 #### Code Sample
 ```cmake
 cmake_minimum_required(VERSION 3.10)
-project(GeneratorExpressionsDemo)
+project(HelloWorld)
 
-add_executable(MyProgram main.cpp)
+add_executable(HelloWorld main.cpp)
 
-target_compile_definitions(MyProgram PRIVATE
+target_compile_definitions(HelloWorld PRIVATE
     $<$<CONFIG:Debug>:DEBUG_MODE>
 )
 
-target_compile_options(MyProgram PRIVATE
+target_compile_options(HelloWorld PRIVATE
     $<$<CONFIG:Debug>:-O0>
 )
 ```
@@ -881,28 +881,59 @@ CMake makes it easy to write cross-platform build systems. In this lesson, we’
 - **Toolchain Files**: Specify compilers, flags, and paths for cross-platform development.
 
 #### Code Sample
+Let’s detect the operating system and compiler.
+
+1. Update your `CMakeLists.txt`:
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(CrossPlatformDemo)
 
-if(WIN32)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
     message(STATUS "Building on Windows")
-elseif(APPLE)
+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
     message(STATUS "Building on macOS")
-elseif(UNIX)
-    message(STATUS "Building on Unix")
+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+    message(STATUS "Building on Linux")
 endif()
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     message(STATUS "Using GCC")
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
     message(STATUS "Using Clang")
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     message(STATUS "Using MSVC")
+else()
+  message(STATUS "Unknown compiler: ${CMAKE_CXX_COMPILER_ID}")
 endif()
 
-add_executable(MyProgram main.cpp)
+add_executable(HelloWorld main.cpp)
 ```
+
+2. Write `main.cpp`
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!" << std::endl;
+    return 0;
+}
+```
+
+3. Build and run the program:
+```bash
+mkdir build
+cd build
+cmake ..
+```
+
+Output:
+```
+...
+-- Building on macOS
+-- Using Clang
+...
+```
+
 
 ### Quiz
 1. How do you detect the operating system in CMake?
@@ -910,8 +941,8 @@ add_executable(MyProgram main.cpp)
 3. How can you use toolchain files for cross-platform development?
 
 ### Answers
-1. You detect the operating system using `if(WIN32)`, `if(APPLE)`, or `if(UNIX)`.
-2. `CMAKE_CXX_COMPILER_ID` identifies the compiler being used (e.g., GCC, Clang, MSVC).
+1. You detect the operating system using `if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")`, `if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")`, or `if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")`.
+2. `CMAKE_CXX_COMPILER_ID` identifies the compiler being used (e.g., GCC, Clang, AppleClang, MSVC).
 3. Toolchain files allow you to customize the build for different platforms by specifying compilers, flags, and paths.
 
 ---

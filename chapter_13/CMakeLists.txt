@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+project(CrossPlatformDemo)
+
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+    message(STATUS "Building on Windows")
+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+    message(STATUS "Building on macOS")
+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+    message(STATUS "Building on Linux")
+endif()
+
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    message(STATUS "Using GCC")
+    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    message(STATUS "Using Clang")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    message(STATUS "Using MSVC")
+else()
+  message(STATUS "Unknown compiler: ${CMAKE_CXX_COMPILER_ID}")
+endif()
+
+add_executable(HelloWorld main.cpp)
