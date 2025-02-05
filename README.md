@@ -806,19 +806,63 @@ CMake has several advanced features that can make your build system more powerfu
 - **Exporting Targets**: Share targets between projects using `export()` and `install(EXPORT)`.
 
 #### Code Sample
+1. Update your `CMakeLists.txt`:
 ```cmake
 cmake_minimum_required(VERSION 3.10)
-project(HelloWorld)
+project(GeneratorExpressionsDemo)
 
+# Add an executable
 add_executable(HelloWorld main.cpp)
 
+# Conditionally add a compile definition for Debug builds
 target_compile_definitions(HelloWorld PRIVATE
-    $<$<CONFIG:Debug>:DEBUG_MODE>
+    $<$<CONFIG:Debug>:DEBUG_MODE>  # Define DEBUG_MODE only in Debug builds
 )
 
+# Conditionally add a compiler flag for Debug builds
 target_compile_options(HelloWorld PRIVATE
-    $<$<CONFIG:Debug>:-O0>
+    $<$<CONFIG:Debug>:-O0>  # Disable optimizations in Debug builds
 )
+```
+
+2. Write `main.cpp`:
+```cpp
+#include <iostream>
+
+int main() {
+#ifdef DEBUG_MODE
+    std::cout << "Hello World from Debug mode!" << std::endl;
+#else
+    std::cout << "Hello World from Release mode!" << std::endl;
+#endif
+    return 0;
+}
+```
+
+3. Build in Debug and Release modes:
+```bash
+mkdir build-debug
+cd build-debug
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+cmake --build .
+./HelloWorld
+
+cd ..
+mkdir build-release
+cd build-release
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+./HelloWorld
+```
+
+Output (Debug):
+```bash
+Hello World from Debug mode!
+```
+
+Output (Release):
+```bash
+Hello World from Release mode!
 ```
 
 ### Quiz
