@@ -12,27 +12,30 @@ CMake is a build system generator that allows you to create build scripts (like 
 
 1. Create a file `main.cpp`:
 
+{% code title="main.cpp" overflow="wrap" %}
 ```cpp
-// main.cpp
 #include <iostream>
 int main() {
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
 ```
+{% endcode %}
 
 2. Create a `CMakeLists.txt` file:
 
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
-# CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
 add_executable(HelloWorld main.cpp)
 ```
+{% endcode %}
 
 3. Build and run the project:
 
+{% code title="bash" overflow="wrap" %}
 ```bash
 mkdir build
 cd build
@@ -40,8 +43,9 @@ cmake ..
 cmake --build .
 ./HelloWorld
 ```
+{% endcode %}
 
-4. Review the output
+4. Output:
 
 ```bash
 Hello, World!
