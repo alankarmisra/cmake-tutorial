@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Introduction to CMake
 
 CMake is a build system generator that allows you to create build scripts (like Makefiles, Visual Studio projects, etc.) in a platform-independent way. It helps manage the build process for C/C++ projects.
@@ -13,7 +27,7 @@ CMake is a build system generator that allows you to create build scripts (like 
 1. Create a file `main.cpp`:
 
 {% code title="main.cpp" overflow="wrap" lineNumbers="true" fullWidth="false" %}
-```cfscript
+```cpp
 #include <iostream>
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -48,7 +62,7 @@ cmake --build .
 4. Output:
 
 {% code overflow="wrap" %}
-```bash
+```
 Hello, World!
 ```
 {% endcode %}
