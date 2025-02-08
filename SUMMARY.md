@@ -1,4 +1,15 @@
 # Table of contents
 
-* [CMake Tutorial Series](README.md)
-* [HelloWorld](chapter_10.md)
+* [Introduction to CMake](README.md)
+* [Variables and Options](chapter_10.md)
+* [Adding Libraries](adding-libraries.md)
+* [Conditional Builds](conditional-builds.md)
+* [External Projects](external-projects.md)
+* [Custom Commands and Targets](custom-commands-and-targets.md)
+* [Advanced Custom Commands](advanced-custom-commands.md)
+* [Testing with CTest](testing-with-ctest.md)
+* [Packaging with CPack](packaging-with-cpack.md)
+* [Advanced CPack Customization](advanced-cpack-customization.md)
+* [Advanced CMake Features](advanced-cmake-features.md)
+* [Best Practices](best-practices.md)
+* [Cross-Platform Development](cross-platform-development.md)
