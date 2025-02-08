@@ -12,8 +12,8 @@ CMake is a build system generator that allows you to create build scripts (like 
 
 1. Create a file `main.cpp`:
 
-{% code title="main.cpp" overflow="wrap" %}
-```clike
+{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
+```cpp
 #include <iostream>
 int main() {
     std::cout << "Hello, World!" << std::endl;
