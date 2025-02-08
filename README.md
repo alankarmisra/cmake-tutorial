@@ -69,13 +69,27 @@ Hello, World!
 
 ### Quiz
 
-1. What is the purpose of `cmake_minimum_required`?
-2. What does `add_executable` do?
-3. Why do we create a `build` directory?
+<details>
 
-### Answers
+<summary>What is the purpose of cmake_minimum_required?</summary>
 
-1. The purpose of `cmake_minimum_required` is to specify the minimum CMake version required to compile. If the current version is lower, it will throw an error.
-2. `add_executable` specifies the target executable name and associated source files.
-3. We create a `build` directory to separate the source from the build files.
+The purpose of `cmake_minimum_required` is to specify the minimum CMake version required to compile. If the current version is lower, it will throw an error.
+
+</details>
+
+<details>
+
+<summary>What does <code>add_executable</code> do?</summary>
+
+`add_executable` specifies the target executable name and associated source files.
+
+</details>
+
+<details>
+
+<summary>Why do we create a <code>build</code> directory?</summary>
+
+We create a `build` directory to separate the source from the build files.
+
+</details>
 
