@@ -12,5 +12,5 @@
 * [Packaging with CPack](packaging-with-cpack.md)
 * [Advanced CPack Customization](advanced-cpack-customization.md)
 * [Advanced CMake Features](advanced-cmake-features.md)
-* [Best Practices](best-practices.md)
 * [Cross-Platform Development](cross-platform-development.md)
+* [Best Practices](best-practices.md)
