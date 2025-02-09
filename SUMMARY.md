@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction to CMake](README.md)
-* [Variables and Options](chapter_10.md)
+* [Variables and Options](variables-and-options.md)
 * [Adding Libraries](adding-libraries.md)
 * [Conditional Builds](conditional-builds.md)
 * [External Projects](external-projects.md)
