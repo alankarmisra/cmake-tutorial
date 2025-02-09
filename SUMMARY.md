@@ -1,7 +1,7 @@
 # Table of contents
 
 * [The problem Make solves](README.md)
-* [The problem CMake solves](<the-problem-cmake-solves.md>)
+* [The problem CMake solves](the-problem-cmake-solves.md)
 * [Variables and Options](variables-and-options.md)
 * [Adding Libraries](adding-libraries.md)
 * [Conditional Builds](conditional-builds.md)
