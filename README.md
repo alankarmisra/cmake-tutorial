@@ -23,7 +23,7 @@ When working on small C++ projects with just one or two files, compiling manuall
 ## Manual Compilation
 
 {% hint style="info" %}
-The following examples are for illustration purposes only. You don't have to create any files or run any of the commands if you don't want to. Our goal is to skim through one way of doing things, recognize its limitations, and appreciate why it's perhaps wiser to start using a more complete tool like `CMake`. Starting from the next chapter, we’ll take a more hands-on approach..
+The following examples are for illustration purposes only. You don't have to create any files or run any of the commands if you don't want to. Our goal is to skim through one way of doing things, recognize its limitations, and appreciate why it's perhaps wiser to start using a more complete tool like `CMake`. Starting from the next chapter, we’ll take a more hands-on approach.
 {% endhint %}
 
 Consider a simple project structure with the following files:
