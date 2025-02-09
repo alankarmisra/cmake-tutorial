@@ -26,6 +26,7 @@ The following examples are for illustration purposes only. You don't have to cre
 
 Consider a simple project structure with the following files:
 
+{% code overflow="wrap" %}
 ```sh
 project/
 ├── P.cxx    # Main program
@@ -37,12 +38,13 @@ project/
 ├── B1.cxx   # Sub-module B1
 ├── B2.cxx   # Sub-module B2
 ```
+{% endcode %}
 
 Each module depends on its submodules. The main program `P.cxx` depends on `A.cxx` and `B.cxx`, which in turn depend on their respective submodules.
 
 A possible manual compilation process might look like this:
 
-{% code title="sh" %}
+{% code title="sh" overflow="wrap" %}
 ```sh
 g++ -c A1.cxx -o A1.o
 g++ -c A2.cxx -o A2.o
@@ -57,7 +59,7 @@ g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
 
 We don't like all that typing. If we were compiling the entire source tree, we could use wildcards to simplify the compilation and also run it in parallel.
 
-{% code title="sh" %}
+{% code title="sh" overflow="wrap" %}
 ```sh
 find . -name "*.cxx" | parallel g++ -c {} -o {.}.o
 g++ *.o -o program
@@ -81,7 +83,7 @@ Say `A1.cxx` changes. We have a choice to recompile the entire codebase. As we'v
 
 `Make` uses a `Makefile` to define rules for compiling and linking source files. A  `Makefile` for our project might look like this:
 
-{% code title="Makefile" %}
+{% code title="Makefile" overflow="wrap" %}
 ```makefile
 program: P.o A.o A1.o A2.o B.o B1.o B2.o
 	g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
@@ -116,7 +118,7 @@ clean:
 
 With this `Makefile`, instead of typing out long compilation commands, we can simply run:
 
-{% code title="sh" %}
+{% code title="sh" overflow="wrap" %}
 ```bash
 make
 ```
@@ -126,7 +128,7 @@ This will only recompile the necessary files when they change, saving time.
 
 To clean up generated files, use:
 
-{% code title="sh" %}
+{% code title="sh" overflow="wrap" %}
 ```bash
 make clean
 ```

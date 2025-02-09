@@ -28,10 +28,11 @@ CPack is highly customizable, allowing you to tailor your packages to specific n
 * **Including Files**: Add extra files (e.g., licenses, READMEs) to your package.
 * **Platform-Specific Installers**: Use generators like `PackageMaker` for macOS `.pkg` files.
 
-1. Update your `CMakeLists.txt`:
-
 ## Code Sample
 
+1. Update your `CMakeLists.txt`:
+
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -59,9 +60,11 @@ install(FILES ${CMAKE_SOURCE_DIR}/README.md DESTINATION .)
 set(CPACK_GENERATOR "DragNDrop;TGZ")
 include(CPack)
 ```
+{% endcode %}
 
 2. Create a `LICENSE.txt` file:
 
+{% code title="LICENSE.txt" overflow="wrap" %}
 ```
 MIT License
 
@@ -69,17 +72,21 @@ Copyright (c) 2023 MyCompany
 
 Permission is hereby granted...
 ```
+{% endcode %}
 
 3. Create a `README.md` file:
 
+{% code title="README.md" overflow="wrap" %}
 ```markdown
 # MyProgram
 
 This is a simple program packaged with CPack.
 ```
+{% endcode %}
 
 4. Build and package the product:
 
+{% code title="sh" overflow="wrap" %}
 ```bash
 mkdir build
 cd build
@@ -87,6 +94,7 @@ cmake ..
 make
 cpack
 ```
+{% endcode %}
 
 If you open the .dmg file it will show you the contents of the `LICENSE.txt` file and ask you to agree. The `.dmg` and `.tar.gz` packages will now include the `LICENSE.txt` and `README.md` files.
 

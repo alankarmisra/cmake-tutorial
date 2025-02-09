@@ -32,6 +32,7 @@ CMake has several advanced features that can make your build system more powerfu
 
 1. Update your `CMakeLists.txt`:
 
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(GeneratorExpressionsDemo)
@@ -49,9 +50,11 @@ target_compile_options(HelloWorld PRIVATE
     $<$<CONFIG:Debug>:-O0>  # Disable optimizations in Debug builds
 )
 ```
+{% endcode %}
 
 2. Write `main.cpp`:
 
+{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
 ```cpp
 #include <iostream>
 
@@ -64,9 +67,11 @@ int main() {
     return 0;
 }
 ```
+{% endcode %}
 
 3. Build in Debug and Release modes:
 
+{% code title="sh" overflow="wrap" %}
 ```bash
 mkdir build-debug
 cd build-debug
@@ -81,18 +86,23 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 ./HelloWorld
 ```
+{% endcode %}
 
-Output (Debug):
+4. Output (Debug):
 
+{% code overflow="wrap" %}
 ```bash
 Hello World from Debug mode!
 ```
+{% endcode %}
 
-Output (Release):
+5. Output (Release):
 
+{% code overflow="wrap" %}
 ```bash
 Hello World from Release mode!
 ```
+{% endcode %}
 
 ## Quiz
 

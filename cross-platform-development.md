@@ -34,7 +34,7 @@ Let’s detect the operating system and compiler.
 
 1. Update your `CMakeLists.txt`:
 
-{% code title="CMakeLists.txt" %}
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(CrossPlatformDemo)
@@ -49,7 +49,8 @@ endif()
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     message(STATUS "Using GCC")
-    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" 
+        OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
     message(STATUS "Using Clang")
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     message(STATUS "Using MSVC")
@@ -63,7 +64,7 @@ add_executable(HelloWorld main.cpp)
 
 2. Write `main.cpp`
 
-{% code title="main.cpp" lineNumbers="true" %}
+{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
 ```cpp
 #include <iostream>
 
@@ -76,7 +77,7 @@ int main() {
 
 3. Build and run the program:
 
-{% code title="sh" %}
+{% code title="sh" overflow="wrap" %}
 ```bash
 mkdir build
 cd build
@@ -86,18 +87,20 @@ cmake ..
 
 4. Output:
 
+{% code overflow="wrap" %}
 ```
 ...
 -- Building on macOS
 -- Using Clang
 ...
 ```
+{% endcode %}
 
 ## Quiz
 
 <details>
 
-<summary>How do you detect the operating system in CMake?</summary>
+<summary>How do you detect the operating system in <code>CMake</code>?</summary>
 
 You detect the operating system using `if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")`, `if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")`, or `if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")`.
 

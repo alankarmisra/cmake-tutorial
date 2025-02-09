@@ -32,6 +32,7 @@ Custom commands can be tied to specific build events, such as **pre-build** or *
 
 1. We will start with the `main.cpp` file and the `CMakeLists.txt` file from `Chapter 1`.
 
+{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
 ```cpp
 #include <iostream>
 int main() {
@@ -39,9 +40,11 @@ int main() {
   return 0;
 }
 ```
+{% endcode %}
 
 2. In addition to the standard lines for compilations, add a few lines to `CMakeLists.txt` to run a command after the build completes.
 
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -58,21 +61,26 @@ add_custom_command(
     COMMENT "Running post-build step"
 )
 ```
+{% endcode %}
 
-3. Run cmake and build, and observe the output
+3. Run `cmake` and build, and observe the output
 
+{% code title="sh" overflow="wrap" %}
 ```bash
 cmake ..
 cmake --build .
 ```
+{% endcode %}
 
-4. Observe the output
+4. Output:
 
-```bash
+{% code overflow="wrap" %}
+```
 ...
 Running post-build step
 Build succeeded!
 ```
+{% endcode %}
 
 ## Quiz
 
