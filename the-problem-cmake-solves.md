@@ -12,17 +12,17 @@ layout:
     visible: true
 ---
 
-# Introduction to CMake
+# The problem CMake solves
 
 CMake is a build system generator that allows you to create build scripts (like Makefiles, Visual Studio projects, etc.) in a platform-independent way. It helps manage the build process for C/C++ projects.
 
-#### Key Concepts
+## Key Concepts
 
 * **CMakeLists.txt**: The main configuration file for CMake.
 * **`cmake` command**: Used to generate build files.
 * **`make` command**: Used to compile the project (on Unix-like systems).
 
-#### Code Sample
+## Code Sample
 
 1. Create a file `main.cpp`:
 
@@ -67,7 +67,7 @@ Hello, World!
 ```
 {% endcode %}
 
-### Quiz
+## Quiz
 
 <details>
 
