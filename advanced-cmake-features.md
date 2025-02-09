@@ -14,19 +14,21 @@ layout:
 
 # Advanced CMake Features
 
+## Introduction
+
 CMake has several advanced features that can make your build system more powerful and flexible. In this lesson, we’ll cover:
 
 * **Generator Expressions**: Dynamic expressions evaluated at build time.
 * **Toolchain Files**: Customize the build for different compilers or platforms.
 * **Exporting and Importing Targets**: Share targets between projects.
 
-#### Key Concepts
+## Key Concepts
 
 * **Generator Expressions**: Allow you to write dynamic CMake code that adapts to the build configuration.
 * **Toolchain Files**: Specify compilers, flags, and paths for cross-platform development.
 * **Exporting Targets**: Share targets between projects using `export()` and `install(EXPORT)`.
 
-#### Code Sample
+## Code Sample
 
 1. Update your `CMakeLists.txt`:
 
@@ -92,7 +94,7 @@ Output (Release):
 Hello World from Release mode!
 ```
 
-### Quiz
+## Quiz
 
 <details>
 

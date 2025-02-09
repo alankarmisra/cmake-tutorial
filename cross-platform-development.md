@@ -14,19 +14,21 @@ layout:
 
 # Cross-Platform Development
 
+## Introduction
+
 `CMake` makes it easy to write cross-platform build systems. In this lesson, we’ll cover:
 
 * **Platform Detection**: Detect the operating system and compiler.
 * **Conditional Compilation**: Use platform-specific code.
 * **Toolchain Files**: Customize the build for different platforms.
 
-#### Key Concepts
+## Key Concepts
 
 * **Platform Detection**: Use `if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")`, `if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")`, or `if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")` to detect the operating system.
 * **Conditional Compilation**: Use `#ifdef` in your source code or generator expressions in CMake.
 * **Toolchain Files**: Specify compilers, flags, and paths for cross-platform development.
 
-#### Code Sample
+## Code Sample
 
 Let’s detect the operating system and compiler.
 
@@ -91,7 +93,7 @@ cmake ..
 ...
 ```
 
-### Quiz
+## Quiz
 
 <details>
 

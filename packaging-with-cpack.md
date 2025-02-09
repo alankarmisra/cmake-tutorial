@@ -14,19 +14,21 @@ layout:
 
 # Packaging with CPack
 
+## Introduction
+
 CPack is a tool that comes bundled with CMake. It allows you to create platform-specific packages for your project, such as:
 
 * **`.dmg`**: Disk Image (common on macOS).
 * **`.tar.gz`**: Compressed archive (common on Unix-like systems).
 * **`.zip`**: Compressed archive (common on Windows).
 
-#### Key Concepts
+## Key Concepts
 
 * **`install()`**: Specifies files or targets to include in the package.
 * **`include(CPack)`**: Enables CPack and generates packaging targets.
 * **CPack Generators**: Specify the type of package to create (e.g., `DragNDrop` for `.dmg`).
 
-#### Code Sample
+## Code Sample
 
 Let’s create a simple project and package it for macOS.
 
@@ -89,7 +91,7 @@ CPack: - package: /path/to/build/HelloWorld-1.0.0-Darwin.tar.gz generated.
 * `HelloWorld-1.0.0-Darwin.dmg`: A macOS disk image
 * `HelloWorld-1.0.0-Darwin.tar.gz`: A compressed archive.
 
-### Quiz
+## Quiz
 
 <details>
 

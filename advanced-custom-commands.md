@@ -14,19 +14,21 @@ layout:
 
 # Advanced Custom Commands
 
+## Introduction
+
 Custom commands can be tied to specific build events, such as **pre-build** or **post-build** steps. This allows you to automate tasks like:
 
 * Running a code formatter before building.
 * Copying files or running tests after building.
 * Generating files dynamically based on build configurations.
 
-#### Key Concepts
+## Key Concepts
 
 * **`PRE_BUILD`, `PRE_LINK`, and `POST_BUILD`**: These options tie custom commands to specific stages of the build process.
 * **Generator Expressions**: Special CMake syntax (e.g., `$<CONFIG:Debug>`) that evaluates at build time.
 * **Combining Commands**: Use multiple `add_custom_command` calls to create complex workflows.
 
-#### Code Sample
+## Code Sample
 
 1. We will start with the `main.cpp` file and the `CMakeLists.txt` file from `Chapter 1`.
 
@@ -72,7 +74,7 @@ Running post-build step
 Build succeeded!
 ```
 
-### Quiz
+## Quiz
 
 <details>
 

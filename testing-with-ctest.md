@@ -14,19 +14,21 @@ layout:
 
 # Testing with CTest
 
+## Introduction
+
 CTest is a testing tool that comes bundled with CMake. It allows you to:
 
 * Define tests in your `CMakeLists.txt`.
 * Run tests and generate reports.
 * Integrate with testing frameworks like GoogleTest.
 
-#### Key Concepts
+## Key Concepts
 
 * **`enable_testing()`**: Enables testing for the project.
 * **`add_test()`**: Defines a test.
 * **`ctest`**: The command-line tool to run tests.
 
-#### Code Sample
+## Code Sample
 
 1. Create `CMakeLists.txt` or copy it from `Chapter 1` and add the lines to enable testing:
 
@@ -74,7 +76,7 @@ Test project /path/to/build
 100% tests passed, 0 tests failed out of 1
 ```
 
-#### Code Sample : Advanced Tests with GoogleTest
+## **Code Sample : Advanced Tests with GoogleTest**
 
 Now let’s integrate GoogleTest for more sophisticated testing.
 
@@ -148,7 +150,7 @@ Test project /path/to/build
 Total Test time (real) =   0.01 sec
 ```
 
-### Quiz
+## Quiz
 
 <details>
 

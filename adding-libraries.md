@@ -14,6 +14,8 @@ layout:
 
 # Adding Libraries
 
+## Introduction
+
 CMake makes it easy to link libraries to your project. Libraries can be system libraries, third-party libraries, or libraries you build yourself.
 
 ## Key Concepts

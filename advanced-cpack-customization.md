@@ -14,13 +14,15 @@ layout:
 
 # Advanced CPack Customization
 
+## Introduction
+
 CPack is highly customizable, allowing you to tailor your packages to specific needs. In this lesson, we’ll cover:
 
 * Adding metadata (e.g., version, description, vendor).
 * Including additional files (e.g., licenses, READMEs).
 * Creating platform-specific installers (e.g., `.pkg` for macOS).
 
-#### Key Concepts
+## Key Concepts
 
 * **CPack Metadata**: Customize package information like name, version, and description.
 * **Including Files**: Add extra files (e.g., licenses, READMEs) to your package.
@@ -28,7 +30,7 @@ CPack is highly customizable, allowing you to tailor your packages to specific n
 
 1. Update your `CMakeLists.txt`:
 
-#### Code Sample
+## Code Sample
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
@@ -88,7 +90,7 @@ cpack
 
 If you open the .dmg file it will show you the contents of the `LICENSE.txt` file and ask you to agree. The `.dmg` and `.tar.gz` packages will now include the `LICENSE.txt` and `README.md` files.
 
-### Quiz
+## Quiz
 
 <details>
 

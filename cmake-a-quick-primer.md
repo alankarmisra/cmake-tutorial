@@ -14,6 +14,8 @@ layout:
 
 # CMake : A Quick Primer
 
+## Introduction
+
 CMake is a build system generator that allows you to create build scripts (like Makefiles, Visual Studio projects, etc.) in a platform-independent way. It helps manage the build process for C/C++ projects.
 
 ## Key Concepts

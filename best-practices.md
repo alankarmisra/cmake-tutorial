@@ -14,19 +14,21 @@ layout:
 
 # Best Practices
 
+## Introduction
+
 Writing clean and maintainable CMake code is essential for large projects. In this lesson, we’ll cover:
 
 * **Modular CMake**: Organize your project into modules.
 * **Target-Based Design**: Use targets instead of global variables.
 * **Versioning**: Specify minimum CMake versions and project versions.
 
-#### Key Concepts
+## Key Concepts
 
 * **Modular CMake**: Break your project into smaller, reusable modules.
 * **Target-Based Design**: Use targets to manage dependencies and properties.
 * **Versioning**: Use `project(MyProject VERSION 1.0.0)` to specify project versions.
 
-#### Code Sample
+## Code Sample
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
@@ -36,7 +38,7 @@ add_subdirectory(src)
 add_subdirectory(lib)
 ```
 
-### Quiz
+## Quiz
 
 <details>
 

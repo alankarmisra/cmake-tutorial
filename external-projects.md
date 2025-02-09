@@ -14,6 +14,8 @@ layout:
 
 # External Projects
 
+## Introduction
+
 Sometimes, your project depends on external libraries or tools that aren’t part of your codebase. CMake provides two main ways to handle this:
 
 1. **`ExternalProject_Add`**: Downloads, builds, and integrates an external project during the build process.
