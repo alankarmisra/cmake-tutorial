@@ -19,13 +19,13 @@ Sometimes, your project depends on external libraries or tools that aren’t par
 1. **`ExternalProject_Add`**: Downloads, builds, and integrates an external project during the build process.
 2. **`FetchContent`**: Fetches and integrates external projects at configure time (introduced in CMake 3.11).
 
-#### Key Concepts
+## Key Concepts
 
 * **`FetchContent_Declare()`**: Declares an external project (e.g., a GitHub repository).
 * **`FetchContent_MakeAvailable()`**: Downloads and makes the project available for use.
 * **Integration**: The external project’s targets can be used in your `CMakeLists.txt` as if they were part of your project.
 
-#### Code Sample
+## Code Sample
 
 1. Let's start with a fresh CMakeLists.txt file to keep things simple. You can continue using the files from the previous chapter, but replace the entire contents of the CMakeLists.txt to the one below.
 
@@ -62,14 +62,28 @@ cmake ..
 cmake --build .
 ```
 
-### Quiz
+## Quiz
 
-1. What is the purpose of `FetchContent_Declare`?
-2. How do you make an external project available for use in your `CMakeLists.txt`?
-3. What does `target_link_libraries` do when linking to an external project like GoogleTest?
+<details>
 
-### Answers
+<summary>What is the purpose of <code>FetchContent_Declare</code>?</summary>
 
-1. `FetchContent_Declare` declares an external project (e.g., a GitHub repository) and specifies how to fetch it.
-2. You use `FetchContent_MakeAvailable` to download and make the external project available.
-3. `target_link_libraries` links the external library to your target, making its functions available.
+`FetchContent_Declare` declares an external project (e.g., a GitHub repository) and specifies how to fetch it.
+
+</details>
+
+<details>
+
+<summary>How do you make an external project available for use in your <code>CMakeLists.txt</code>?</summary>
+
+You use `FetchContent_MakeAvailable` to download and make the external project available.
+
+</details>
+
+<details>
+
+<summary>What does <code>target_link_libraries</code> do when linking to an external project like GoogleTest?</summary>
+
+`target_link_libraries` links the external library to your target, making its functions available.
+
+</details>

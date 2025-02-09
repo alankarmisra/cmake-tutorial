@@ -16,13 +16,13 @@ layout:
 
 CMake allows you to define variables and options to control the build process. Variables can store paths, flags, or other values, while options are boolean values that can be toggled on or off.
 
-**Key Concepts**
+## **Key Concepts**
 
 * **`set()`**: Assigns a value to a variable.
 * **`option()`**: Defines a boolean option that can be toggled on or off.
 * **`if()`**: Used to conditionally execute CMake code.
 
-**Code Sample**
+## **Code Sample**
 
 1. Continue using the files from the previous chapter. Edit the `CMakeLists.txt` file to define a variable and use it:
 
@@ -84,14 +84,28 @@ You should see the status messages printed out on the terminal.
 -- Generating done (0.0s)
 ```
 
-#### Quiz
+## Quiz
 
-1. What does the `set` command do?
-2. How do you check if an option is enabled?
-3. What is the difference between `set` and `option`?
+<details>
 
-#### Answers
+<summary>What does the <code>set</code> command do?</summary>
 
-1. The `set` command assigns a value to a variable. This value can be a string, a path, a list, or even a complex expression.
-2. You can check if an option is enabled using `if(OPTION_NAME)`.
-3. `set` is for general-purpose variables (strings, paths, etc.), while `option` is specifically for boolean flags (`ON` or `OFF`) that can be toggled by the user.
+The `set` command assigns a value to a variable. This value can be a string, a path, a list, or even a complex expression.
+
+</details>
+
+<details>
+
+<summary>How do you check if an option is enabled?</summary>
+
+You can check if an option is enabled using `if(OPTION_NAME)`.
+
+</details>
+
+<details>
+
+<summary>What is the difference between <code>set</code> and <code>option</code>?</summary>
+
+`set` is for general-purpose variables (strings, paths, etc.), while `option` is specifically for boolean flags (`ON` or `OFF`) that can be toggled by the user.
+
+</details>
