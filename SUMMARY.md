@@ -1,7 +1,7 @@
 # Table of contents
 
 * [The problem Make solves](README.md)
-* [CMake: A Quick Primer](cmake-a-quick-primer.md)
+* [CMake : A Quick Primer](a-quick-primer.md)
 * [Variables and Options](variables-and-options.md)
 * [Adding Libraries](adding-libraries.md)
 * [Conditional Builds](conditional-builds.md)
