@@ -26,6 +26,10 @@ CMake is a build system generator that allows you to create build scripts (like 
 
 ## Code Sample
 
+{% hint style="info" %}
+In this chapter, and beyond, we will be actively working with `CMake`. Grab your favourite text editor, and `C++` compiler and get ready to code.
+{% endhint %}
+
 1. Create a file `main.cpp`:
 
 {% code title="main.cpp" overflow="wrap" lineNumbers="true" fullWidth="false" %}
@@ -38,7 +42,7 @@ int main() {
 ```
 {% endcode %}
 
-2. Create a `CMakeLists.txt` file:
+2. Create a `CMakeLists.txt` file in the same directory:
 
 {% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
@@ -56,7 +60,7 @@ add_executable(HelloWorld main.cpp)
 mkdir build
 cd build
 cmake ..
-cmake --build .
+cmake --build . 
 ./HelloWorld
 ```
 {% endcode %}
