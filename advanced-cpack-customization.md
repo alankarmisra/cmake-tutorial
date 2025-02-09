@@ -90,12 +90,26 @@ If you open the .dmg file it will show you the contents of the `LICENSE.txt` fil
 
 ### Quiz
 
-1. What is the purpose of `CPACK_RESOURCE_FILE_LICENSE`?
-2. How do you specify the generator for a macOS `.pkg` installer?
-3. What does `CPACK_PACKAGE_VENDOR` do?
+<details>
 
-### Answers
+<summary>What is the purpose of <code>CPACK_RESOURCE_FILE_LICENSE</code>?</summary>
 
-1. `CPACK_RESOURCE_FILE_LICENSE` specifies the license file to include in the package.
-2. You specify the generator for a macOS `.pkg` installer using `set(CPACK_GENERATOR "PackageMaker")`.
-3. `CPACK_PACKAGE_VENDOR` specifies the vendor name for the package.
+`CPACK_RESOURCE_FILE_LICENSE` specifies the license file to include in the package.
+
+</details>
+
+<details>
+
+<summary>How do you specify the generator for a macOS <code>.pkg</code> installer?</summary>
+
+You specify the generator for a macOS `.pkg` installer using `set(CPACK_GENERATOR "PackageMaker")`.
+
+</details>
+
+<details>
+
+<summary>What does <code>CPACK_PACKAGE_VENDOR</code> do?</summary>
+
+`CPACK_PACKAGE_VENDOR` specifies the vendor name for the package.
+
+</details>

@@ -94,12 +94,26 @@ Hello World from Release mode!
 
 ### Quiz
 
-1. What is the purpose of generator expressions?
-2. How do you conditionally add a compiler flag for Debug builds?
-3. What does `$<CONFIG:Debug>` evaluate to in Release mode?
+<details>
 
-### Answers
+<summary>What is the purpose of generator expressions?</summary>
 
-1. Generator expressions allow you to write dynamic CMake code that adapts to the build configuration.
-2. You can conditionally add a compiler flag using `target_compile_options(MyTarget PRIVATE $<$<CONFIG:Debug>:-O0>)`.
-3. `$<CONFIG:Debug>` evaluates to `0` (false) in Release mode.
+Generator expressions allow you to write dynamic CMake code that adapts to the build configuration.
+
+</details>
+
+<details>
+
+<summary>How do you conditionally add a compiler flag for Debug builds?</summary>
+
+You can conditionally add a compiler flag using `target_compile_options(MyTarget PRIVATE $<$<CONFIG:Debug>:-O0>)`.
+
+</details>
+
+<details>
+
+<summary>What does <code>$&#x3C;CONFIG:Debug></code> evaluate to in Release mode?</summary>
+
+`$<CONFIG:Debug>` evaluates to `0` (false) in Release mode.
+
+</details>

@@ -150,12 +150,26 @@ Total Test time (real) =   0.01 sec
 
 ### Quiz
 
-1. What does `enable_testing()` do?
-2. How do you define a test using `add_test()`?
-3. What is the purpose of `ctest`?
+<details>
 
-### Answers
+<summary>What does <code>enable_testing()</code> do?</summary>
 
-1. `enable_testing()` enables testing support in your project.
-2. You define a test using `add_test(NAME TestName COMMAND TestCommand)`.
-3. `ctest` runs all the tests defined in your project and generates reports.
+`enable_testing()` enables testing support in your project.
+
+</details>
+
+<details>
+
+<summary>How do you define a test using <code>add_test()</code>?</summary>
+
+You define a test using `add_test(NAME TestName COMMAND TestCommand)`.
+
+</details>
+
+<details>
+
+<summary>What is the purpose of <code>ctest</code>?</summary>
+
+`ctest` runs all the tests defined in your project and generates reports.
+
+</details>

@@ -91,12 +91,27 @@ CPack: - package: /path/to/build/HelloWorld-1.0.0-Darwin.tar.gz generated.
 
 ### Quiz
 
-1. What does the `install()` command do?
-2. How do you specify the type of package to create with CPack?
-3. What is the purpose of `include(CPack)`?
+<details>
 
-### Answers
+<summary>What does the <code>install()</code> command do?</summary>
 
-1. The `install()` command specifies which files or targets should be included in the package and where they should be installed.
-2. You specify the type of package using the `CPACK_GENERATOR` variable (e.g., `DragNDrop` for `.dmg`).
-3. `include(CPack)` enables CPack and generates the necessary packaging targets.
+The `install()` command specifies which files or targets should be included in the package and where they should be installed.
+
+</details>
+
+<details>
+
+<summary>How do you specify the type of package to create with CPack?</summary>
+
+You specify the type of package using the `CPACK_GENERATOR` variable (e.g., `DragNDrop` for `.dmg`).
+
+</details>
+
+<details>
+
+<summary>What is the purpose of <code>include(CPack)</code>?</summary>
+
+`include(CPack)` enables CPack and generates the necessary packaging targets.
+
+</details>
+

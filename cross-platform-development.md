@@ -14,7 +14,7 @@ layout:
 
 # Cross-Platform Development
 
-CMake makes it easy to write cross-platform build systems. In this lesson, we’ll cover:
+`CMake` makes it easy to write cross-platform build systems. In this lesson, we’ll cover:
 
 * **Platform Detection**: Detect the operating system and compiler.
 * **Conditional Compilation**: Use platform-specific code.
@@ -32,6 +32,7 @@ Let’s detect the operating system and compiler.
 
 1. Update your `CMakeLists.txt`:
 
+{% code title="CMakeLists.txt" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(CrossPlatformDemo)
@@ -56,9 +57,11 @@ endif()
 
 add_executable(HelloWorld main.cpp)
 ```
+{% endcode %}
 
 2. Write `main.cpp`
 
+{% code title="main.cpp" lineNumbers="true" %}
 ```cpp
 #include <iostream>
 
@@ -67,16 +70,19 @@ int main() {
     return 0;
 }
 ```
+{% endcode %}
 
 3. Build and run the program:
 
+{% code title="sh" %}
 ```bash
 mkdir build
 cd build
 cmake ..
 ```
+{% endcode %}
 
-Output:
+4. Output:
 
 ```
 ...
@@ -87,12 +93,26 @@ Output:
 
 ### Quiz
 
-1. How do you detect the operating system in CMake?
-2. What is the purpose of `CMAKE_CXX_COMPILER_ID`?
-3. How can you use toolchain files for cross-platform development?
+<details>
 
-### Answers
+<summary>How do you detect the operating system in CMake?</summary>
 
-1. You detect the operating system using `if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")`, `if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")`, or `if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")`.
-2. `CMAKE_CXX_COMPILER_ID` identifies the compiler being used (e.g., GCC, Clang, AppleClang, MSVC).
-3. Toolchain files allow you to customize the build for different platforms by specifying compilers, flags, and paths.
+You detect the operating system using `if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")`, `if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")`, or `if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")`.
+
+</details>
+
+<details>
+
+<summary>What is the purpose of <code>CMAKE_CXX_COMPILER_ID</code>?</summary>
+
+`CMAKE_CXX_COMPILER_ID` identifies the compiler being used (e.g., GCC, Clang, AppleClang, MSVC).
+
+</details>
+
+<details>
+
+<summary>How can you use toolchain files for cross-platform development?</summary>
+
+Toolchain files allow you to customize the build for different platforms by specifying compilers, flags, and paths.
+
+</details>

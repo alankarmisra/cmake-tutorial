@@ -38,12 +38,26 @@ add_subdirectory(lib)
 
 ### Quiz
 
-1. Why is modular CMake important?
-2. What is the benefit of using target-based design?
-3. How do you specify a project version in CMake?
+<details>
 
-### Answers
+<summary>Why is modular <code>CMake</code> important?</summary>
 
-1. Modular CMake makes your project easier to maintain and scale.
-2. Target-based design avoids global variables and makes dependencies explicit.
-3. You specify a project version using `project(MyProject VERSION 1.0.0)`.
+Modular `CMake` makes your project easier to maintain and scale.
+
+</details>
+
+<details>
+
+<summary>What is the benefit of using target-based design?</summary>
+
+Target-based design avoids global variables and makes dependencies explicit.
+
+</details>
+
+<details>
+
+<summary>How do you specify a project version in <code>CMake</code>?</summary>
+
+You specify a project version using `project(MyProject VERSION 1.0.0)`.
+
+</details>

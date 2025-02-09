@@ -74,12 +74,26 @@ Build succeeded!
 
 ### Quiz
 
-1. What is the purpose of the `POST_BUILD` option in `add_custom_command`?
-2. How do generator expressions (e.g., `$<CONFIG>`) work?
-3. Can you combine multiple custom commands into a single workflow?
+<details>
 
-### Answers
+<summary>What is the purpose of the <code>POST_BUILD</code> option in <code>add_custom_command</code>?</summary>
 
-1. The `POST_BUILD` option specifies that the command should run after the target is built.
-2. Generator expressions are evaluated at build time and allow you to write dynamic CMake code.
-3. Yes, you can combine multiple `add_custom_command` calls to create complex workflows.
+The `POST_BUILD` option specifies that the command should run after the target is built.
+
+</details>
+
+<details>
+
+<summary>How do generator expressions (e.g., <code>$&#x3C;CONFIG></code>) work?</summary>
+
+Generator expressions are evaluated at build time and allow you to write dynamic CMake code.
+
+</details>
+
+<details>
+
+<summary>Can you combine multiple custom commands into a single workflow?</summary>
+
+Yes, you can combine multiple `add_custom_command` calls to create complex workflows.
+
+</details>
