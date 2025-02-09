@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Introduction to CMake](README.md)
+* [The problem Make solves](README.md)
+* [The problem CMake solves](<README (1).md>)
 * [Variables and Options](variables-and-options.md)
 * [Adding Libraries](adding-libraries.md)
 * [Conditional Builds](conditional-builds.md)
