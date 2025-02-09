@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Custom Commands and Targets
 
 CMake allows you to define **custom commands** and **custom targets** to perform tasks that aren’t part of the standard build process. For example:

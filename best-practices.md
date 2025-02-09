@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Best Practices
 
 Writing clean and maintainable CMake code is essential for large projects. In this lesson, we’ll cover:

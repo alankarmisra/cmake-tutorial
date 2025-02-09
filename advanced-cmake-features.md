@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Advanced CMake Features
 
 CMake has several advanced features that can make your build system more powerful and flexible. In this lesson, we’ll cover:

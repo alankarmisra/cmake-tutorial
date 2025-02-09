@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Packaging with CPack
 
 CPack is a tool that comes bundled with CMake. It allows you to create platform-specific packages for your project, such as:

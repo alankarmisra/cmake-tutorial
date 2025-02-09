@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Variables and Options
 
 CMake allows you to define variables and options to control the build process. Variables can store paths, flags, or other values, while options are boolean values that can be toggled on or off.

@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Advanced Custom Commands
 
 Custom commands can be tied to specific build events, such as **pre-build** or **post-build** steps. This allows you to automate tasks like:

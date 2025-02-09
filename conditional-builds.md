@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Conditional Builds
 
 CMake allows you to conditionally include or exclude parts of your build based on variables, options, or system properties.

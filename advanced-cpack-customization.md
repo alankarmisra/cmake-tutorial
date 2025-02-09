@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Advanced CPack Customization
 
 CPack is highly customizable, allowing you to tailor your packages to specific needs. In this lesson, we’ll cover:

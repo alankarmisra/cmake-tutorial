@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Adding Libraries
 
 CMake makes it easy to link libraries to your project. Libraries can be system libraries, third-party libraries, or libraries you build yourself.

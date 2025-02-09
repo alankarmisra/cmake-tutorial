@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # External Projects
 
 Sometimes, your project depends on external libraries or tools that aren’t part of your codebase. CMake provides two main ways to handle this:

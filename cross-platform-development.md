@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Cross-Platform Development
 
 CMake makes it easy to write cross-platform build systems. In this lesson, we’ll cover:
