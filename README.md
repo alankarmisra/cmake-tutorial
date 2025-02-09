@@ -14,16 +14,19 @@ layout:
 
 # The problem Make solves
 
-When working on small C++ projects with just one or two files, compiling manually using `g++` or `clang++` is simple. However, as projects grow and include multiple source files, dependencies, and libraries, managing the build process manually becomes tedious and error-prone. This is where `Make` comes in.
+## Introduction
+
+When working on small C++ projects with just one or two files, compiling manually using `g++` or `clang++` is simple. However, as projects grow and include multiple source files, dependencies, and libraries, managing the build process manually becomes tedious and error-prone. Let's look an example:
 
 ## Manual Compilation
 
 Consider a simple project structure with the following files:
 
-```bash
+```sh
 project/
 ├── P.cxx    # Main program
 ├── A.cxx    # Module A
+├── A1.h     # Header for A1 (for brevity we've only mentioned one header)
 ├── A1.cxx   # Sub-module A1
 ├── A2.cxx   # Sub-module A2
 ├── B.cxx    # Module B
@@ -35,7 +38,7 @@ Each module depends on its submodules. The main program `P.cxx` depends on `A.cx
 
 A possible manual compilation process might look like this:
 
-```bash
+```sh
 g++ -c A1.cxx -o A1.o
 g++ -c A2.cxx -o A2.o
 g++ -c A.cxx -o A.o
@@ -46,18 +49,31 @@ g++ -c P.cxx -o P.o
 g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
 ```
 
+We don't like all that typing. If we were compiling the entire source tree, we could use wildcards to simplify the compilation and also run it in parallel.
+
+```sh
+find . -name "*.cxx" | parallel g++ -c {} -o {.}.o
+g++ *.o -o program
+```
+
+Much better. But as we'll see soon, this is only pragmatic for small codebases.
+
 ## Problems with Manual Compilation
 
-1. **Time-Consuming**: Manually typing out compilation commands is inefficient.
-2. **Error-Prone**: Forgetting a dependency can result in linker errors.
-3. **Unnecessary Recompilation**: Even if only `A1.cxx` changes, recompiling everything wastes time.
-4. **Platform-Specific**: The compilation process might differ for different operating systems.
+Say `A1.cxx` changes. We have a choice to recompile the entire codebase. As we've opined earlier, if we had a small codebase, this would be a reasonably pragmatic approach. On a large codebase, this will slow things down significantly. So we decide to track the dependencies ourselves. We recompile only `A1.cxx` and then link. This works too. As we begin to make changes across multiple files though, tracking dependencies manually starts to become cumbersome and error-prone rather quickly.
 
-## Introducing Make
+## Why Make?
 
-`Make` is a tool that automates the compilation process. It uses a `Makefile` to define rules for compiling and linking source files. A simple `Makefile` for our project might look like this:
+* **Selective Compilation** – `make` uses timestamps to determine which files have changed, and only recompiles them and related dependecies as we illustrate next.
+* **Dependency Management** – say you've declared a dependency of `A1.o` on `A1.cxx` and `A1.h`. If either `A1.cxx` or `A1.h` changes, `make` can detect this and recompile `A1.o`.
+* **Modular Rules** – `make` allows defining rules for building individual components, making the build system more scalable.
+* **Parallel Builds** – `make -j` enables parallel compilation, speeding up the process.
 
-```make
+## The Makefile
+
+`Make` uses a `Makefile` to define rules for compiling and linking source files. A  `Makefile` for our project might look like this:
+
+```makefile
 program: P.o A.o A1.o A2.o B.o B1.o B2.o
 	g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
 
@@ -67,7 +83,7 @@ P.o: P.cxx
 A.o: A.cxx A1.o A2.o
 	g++ -c A.cxx -o A.o
 
-A1.o: A1.cxx
+A1.o: A1.cxx A1.h 
 	g++ -c A1.cxx -o A1.o
 
 A2.o: A2.cxx
@@ -88,7 +104,7 @@ clean:
 
 ## Running Make
 
-With this `Makefile`, instead of typing out long compilation commands, you can simply run:
+With this `Makefile`, instead of typing out long compilation commands, we can simply run:
 
 ```bash
 make
@@ -124,7 +140,7 @@ Manual compilation is time-consuming, error-prone, inefficient, and not scalable
 
 <details>
 
-<summary>What does <code>make</code> do when you run <code>make</code> in a directory with a <code>Makefile</code>?</summary>
+<summary>What does <code>make</code> do when we run <code>make</code> in a directory with a <code>Makefile</code>?</summary>
 
 `Make` reads the `Makefile` and executes the compilation commands necessary to build the program.
 
