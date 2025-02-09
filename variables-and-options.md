@@ -26,16 +26,17 @@ CMake allows you to define variables and options to control the build process. V
 
 1. Continue using the files from the previous chapter. Edit the `CMakeLists.txt` file to define a variable and use it:
 
+{% code title="CMakeLists.txt" %}
 ```cmake
-# CMakeLists.txt
 set(MY_VARIABLE "Hello, CMake!")
 message(STATUS "MY_VARIABLE is set to ${MY_VARIABLE}")
 ```
+{% endcode %}
 
 2. Define an option:
 
+{% code title="CMakeLists.txt" %}
 ```cmake
-# CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
 
@@ -52,14 +53,17 @@ else()
     message(STATUS "Feature is disabled")
 endif()
 ```
+{% endcode %}
 
 3. Build the project:
 
-```bash
-$ cmake ..
+{% code title="sh" %}
+```sh
+cmake ..
 ```
+{% endcode %}
 
-You should see the status messages printed out on the terminal.
+4. Output:
 
 ```bash
 -- MY_VARIABLE is set to Hello, CMake!
@@ -69,13 +73,15 @@ You should see the status messages printed out on the terminal.
 ...
 ```
 
-4. Build the project again with the ENABLE\_FEATURE turned off.
+5. Build the project again with the ENABLE\_FEATURE turned off.
 
+{% code title="sh" %}
 ```bash
 cmake .. -DENABLE_FEATURE=off
 ```
+{% endcode %}
 
-You should see the status messages printed out on the terminal.
+6. Output
 
 ```bash
 -- MY_VARIABLE is set to Hello, CMake!

@@ -16,8 +16,6 @@ layout:
 
 ## Introduction
 
-
-
 When working on small C++ projects with just one or two files, compiling manually using `g++` or `clang++` is simple. However, as projects grow and include multiple source files, dependencies, and libraries, managing the build process manually becomes tedious and error-prone. Let's look an example:
 
 ## Manual Compilation
@@ -44,6 +42,7 @@ Each module depends on its submodules. The main program `P.cxx` depends on `A.cx
 
 A possible manual compilation process might look like this:
 
+{% code title="sh" %}
 ```sh
 g++ -c A1.cxx -o A1.o
 g++ -c A2.cxx -o A2.o
@@ -54,13 +53,16 @@ g++ -c B.cxx -o B.o
 g++ -c P.cxx -o P.o
 g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
 ```
+{% endcode %}
 
 We don't like all that typing. If we were compiling the entire source tree, we could use wildcards to simplify the compilation and also run it in parallel.
 
+{% code title="sh" %}
 ```sh
 find . -name "*.cxx" | parallel g++ -c {} -o {.}.o
 g++ *.o -o program
 ```
+{% endcode %}
 
 Much better. But as we'll see soon, this is only pragmatic for small codebases.
 
@@ -79,6 +81,7 @@ Say `A1.cxx` changes. We have a choice to recompile the entire codebase. As we'v
 
 `Make` uses a `Makefile` to define rules for compiling and linking source files. A  `Makefile` for our project might look like this:
 
+{% code title="Makefile" %}
 ```makefile
 program: P.o A.o A1.o A2.o B.o B1.o B2.o
 	g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
@@ -107,22 +110,27 @@ B2.o: B2.cxx
 clean:
 	rm -f *.o program
 ```
+{% endcode %}
 
 ## Running Make
 
 With this `Makefile`, instead of typing out long compilation commands, we can simply run:
 
+{% code title="sh" %}
 ```bash
 make
 ```
+{% endcode %}
 
 This will only recompile the necessary files when they change, saving time.
 
 To clean up generated files, use:
 
+{% code title="sh" %}
 ```bash
 make clean
 ```
+{% endcode %}
 
 ## Limitations of Make
 

@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# The problem CMake solves
+# CMake : A Quick Primer
 
 CMake is a build system generator that allows you to create build scripts (like Makefiles, Visual Studio projects, etc.) in a platform-independent way. It helps manage the build process for C/C++ projects.
 
@@ -38,7 +38,7 @@ int main() {
 
 2. Create a `CMakeLists.txt` file:
 
-{% code title="CMakeLists.txt" overflow="wrap" lineNumbers="true" %}
+{% code title="CMakeLists.txt" overflow="wrap" %}
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -49,7 +49,7 @@ add_executable(HelloWorld main.cpp)
 
 3. Build and run the project:
 
-{% code title="bash" overflow="wrap" %}
+{% code title="sh" overflow="wrap" %}
 ```bash
 mkdir build
 cd build
