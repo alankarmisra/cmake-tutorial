@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Best Practices
 
 ## Introduction
@@ -30,7 +16,7 @@ Writing clean and maintainable CMake code is essential for large projects. In th
 
 ## Code Sample
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(MyProject VERSION 1.0.0)
@@ -38,7 +24,7 @@ project(MyProject VERSION 1.0.0)
 add_subdirectory(src)
 add_subdirectory(lib)
 ```
-{% endcode %}
+
 
 ## Quiz
 

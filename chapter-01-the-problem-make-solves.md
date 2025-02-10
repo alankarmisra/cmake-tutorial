@@ -1,18 +1,4 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
-# The problem Make solves
+# The Problem Make Solves
 
 ## Introduction
 
@@ -20,13 +6,13 @@ When working on small C++ projects with just one or two files, compiling manuall
 
 ## Manual Compilation
 
-{% hint style="info" %}
+
 The following examples are for illustration purposes only. You don't have to create any files or run any of the commands if you don't want to. Our goal is to skim through one way of doing things, recognize its limitations, and appreciate why it's perhaps wiser to start using a more complete tool like `CMake`. Starting from the next chapter, we’ll take a more hands-on approach.
-{% endhint %}
+
 
 Consider a simple project structure with the following files:
 
-{% code overflow="wrap" %}
+
 ```sh
 project/
 ├── P.cxx    # Main program
@@ -38,13 +24,12 @@ project/
 ├── B1.cxx   # Sub-module B1
 ├── B2.cxx   # Sub-module B2
 ```
-{% endcode %}
+
 
 Each module depends on its submodules. The main program `P.cxx` depends on `A.cxx` and `B.cxx`, which in turn depend on their respective submodules.
 
 A possible manual compilation process might look like this:
 
-{% code title="sh" overflow="wrap" %}
 ```sh
 g++ -c A1.cxx -o A1.o
 g++ -c A2.cxx -o A2.o
@@ -55,16 +40,16 @@ g++ -c B.cxx -o B.o
 g++ -c P.cxx -o P.o
 g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
 ```
-{% endcode %}
+
 
 We don't like all that typing. If we were compiling the entire source tree, we could use wildcards to simplify the compilation and also run it in parallel.
 
-{% code title="sh" overflow="wrap" %}
+
 ```sh
 find . -name "*.cxx" | parallel g++ -c {} -o {.}.o
 g++ *.o -o program
 ```
-{% endcode %}
+
 
 Much better. But as we'll see soon, this is only pragmatic for small codebases.
 
@@ -83,7 +68,7 @@ Say `A1.cxx` changes. We have a choice to recompile the entire codebase. As we'v
 
 `Make` uses a `Makefile` to define rules for compiling and linking source files. A  `Makefile` for our project might look like this:
 
-{% code title="Makefile" overflow="wrap" %}
+
 ```makefile
 program: P.o A.o A1.o A2.o B.o B1.o B2.o
 	g++ P.o A.o A1.o A2.o B.o B1.o B2.o -o program
@@ -112,27 +97,27 @@ B2.o: B2.cxx
 clean:
 	rm -f *.o program
 ```
-{% endcode %}
+
 
 ## Running Make
 
 With this `Makefile`, instead of typing out long compilation commands, we can simply run:
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 make
 ```
-{% endcode %}
+
 
 This will only recompile the necessary files when they change, saving time.
 
 To clean up generated files, use:
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 make clean
 ```
-{% endcode %}
+
 
 ## Limitations of Make
 

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Custom Commands and Targets
 
 ## Introduction
@@ -32,7 +18,7 @@ CMake allows you to define **custom commands** and **custom targets** to perform
 
 1. Let's start by creating `makehello.cpp` which will generate a simple function for us.
 
-{% code title=" makehello.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 // This will generate a single function called sayHello()
 // which prints Hello, World! to the stdin.
@@ -57,11 +43,11 @@ int main(int argc, char *argv[]) {
   return fileOpen ? 0 : 1; // return 0 if wrote the file
 }
 ```
-{% endcode %}
+
 
 2. Let's create a `makehello.cmake` file which will create a `MakeHello` executable from makehello.cpp and run it using the custom command feature to finally generate our `hello.h` file.
 
-{% code title="makehello.cmake" overflow="wrap" %}
+
 ```cmake
 add_executable(MakeHello makehello.cpp)
 
@@ -71,13 +57,13 @@ add_custom_command(
   DEPENDS MakeHello
   )
 ```
-{% endcode %}
+
 
 Notice above how `OUTPUT` specifies that `hello.h` will be generated in the bin directory (called `build` in our case). This helps CMake decide when to run this custom command - i.e. whenever something references `hello.h`
 
 3. Let's edit the `main.cpp` file to call the `sayHello` function which will be defined in `hello.h` when it is generated. Your editor will indicate that `hello.h` is missing for now.
 
-{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 #include "hello.h" 
 #include <iostream>
@@ -87,11 +73,11 @@ int main() {
   return 0;
 }
 ```
-{% endcode %}
+
 
 4. Finally, let's edit the CMakeLists.txt file to include the makehello.cmake file.
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.15)
 project(HelloWorld)
@@ -110,27 +96,27 @@ target_include_directories(HelloWorld PRIVATE
                              ${CMAKE_CURRENT_BINARY_DIR}
                              )
 ```
-{% endcode %}
+
 
 5. Run cmake and build.
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 cmake ..
 cmake --build .
 ```
-{% endcode %}
+
 
 You should find `hello.h` in the `build` directory and everything should compile nicely.
 
 6. Output:
 
-{% code overflow="wrap" %}
+
 ```bash
 ./HelloWorld
 Hello, World!
 ```
-{% endcode %}
+
 
 ## Quiz
 

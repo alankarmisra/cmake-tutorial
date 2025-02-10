@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Conditional Builds
 
 ## Introduction
@@ -28,23 +14,23 @@ CMake allows you to conditionally include or exclude parts of your build based o
 
 1. Create `windows_specific.cpp` file with some dummy code.
 
-{% code title="windows_specific.cpp" overflow="wrap" %}
+
 ```cpp
 void windows_function() {}
 ```
-{% endcode %}
+
 
 2. Create `unix_specific.cpp` file with some dummy code.
 
-{% code title="unix_specific.cpp" overflow="wrap" %}
+
 ```cpp
 void unix_function() {}
 ```
-{% endcode %}
+
 
 3. Edit the CMakeListsFile.txt to include the extra sources and add them to the executable.
 
-{% code title="CMakeListsFile.txt " overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -79,7 +65,7 @@ target_link_libraries(HelloWorld PRIVATE Threads::Threads)
 add_library(MyLibrary STATIC my_library.cpp)
 target_link_libraries(HelloWorld PRIVATE MyLibrary)
 ```
-{% endcode %}
+
 
 ## Quiz
 

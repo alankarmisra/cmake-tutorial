@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Testing with CTest
 
 ## Introduction
@@ -32,7 +18,7 @@ CTest is a testing tool that comes bundled with CMake. It allows you to:
 
 1. Create `CMakeLists.txt` or copy it from `Chapter 1` and add the lines to enable testing:
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -46,11 +32,11 @@ enable_testing()
 add_test(NAME HelloWorldTest COMMAND HelloWorld)
 # --------------------
 ```
-{% endcode %}
+
 
 2. Write `main.cpp` or copy it from `Chapter 1`
 
-{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 #include <iostream>
 int main() {
@@ -58,11 +44,11 @@ int main() {
   return 0;
 }
 ```
-{% endcode %}
+
 
 3. Build and run the tests:
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 mkdir build
 cd build
@@ -70,11 +56,11 @@ cmake ..
 cmake --build .
 ctest
 ```
-{% endcode %}
+
 
 Output:
 
-{% code overflow="wrap" %}
+
 ```bash
 Test project /path/to/build
     Start 1: HelloWorldTest
@@ -82,7 +68,7 @@ Test project /path/to/build
 
 100% tests passed, 0 tests failed out of 1
 ```
-{% endcode %}
+
 
 ## **Code Sample : Advanced Tests with GoogleTest**
 
@@ -90,7 +76,7 @@ Now let’s integrate GoogleTest for more sophisticated testing.
 
 1. Update your `CMakeLists.txt`
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -121,11 +107,11 @@ enable_testing()
 add_test(NAME HelloWorldTest COMMAND HelloWorldTest)
 
 ```
-{% endcode %}
+
 
 2. Write `test.cpp`
 
-{% code title="test.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 #include <gtest/gtest.h>
 
@@ -138,11 +124,11 @@ int main(int argc, char **argv) {
     return RUN_ALL_TESTS();
 }
 ```
-{% endcode %}
+
 
 3. Build and run the tests
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 mkdir build
 cd build
@@ -150,7 +136,7 @@ cmake ..
 make
 ctest
 ```
-{% endcode %}
+
 
 Output:
 

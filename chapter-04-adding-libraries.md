@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Adding Libraries
 
 ## Introduction
@@ -30,17 +16,17 @@ You can continue using the files from the previous chapter.
 
 1. Create a new file `my_library.cpp` with some dummy code.
 
-{% code title="my_library.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 void my_library_func() {
   // noop
 }
 ```
-{% endcode %}
+
 
 2. Edit the `CMakeLists.txt`
 
-{% code title="CMakeLists.txt " overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -64,7 +50,7 @@ target_link_libraries(HelloWorld PRIVATE Threads::Threads)
 add_library(MyLibrary STATIC my_library.cpp)
 target_link_libraries(HelloWorld PRIVATE MyLibrary)
 ```
-{% endcode %}
+
 
 ## Quiz
 

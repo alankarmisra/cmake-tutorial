@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Cross-Platform Development
 
 ## Introduction
@@ -34,7 +20,7 @@ Let’s detect the operating system and compiler.
 
 1. Update your `CMakeLists.txt`:
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(CrossPlatformDemo)
@@ -60,11 +46,11 @@ endif()
 
 add_executable(HelloWorld main.cpp)
 ```
-{% endcode %}
+
 
 2. Write `main.cpp`
 
-{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 #include <iostream>
 
@@ -73,28 +59,28 @@ int main() {
     return 0;
 }
 ```
-{% endcode %}
+
 
 3. Build and run the program:
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 mkdir build
 cd build
 cmake ..
 ```
-{% endcode %}
+
 
 4. Output:
 
-{% code overflow="wrap" %}
+
 ```
 ...
 -- Building on macOS
 -- Using Clang
 ...
 ```
-{% endcode %}
+
 
 ## Quiz
 

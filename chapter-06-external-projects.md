@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # External Projects
 
 ## Introduction
@@ -31,7 +17,7 @@ Sometimes, your project depends on external libraries or tools that aren’t par
 
 1. Let's start with a fresh CMakeLists.txt file to keep things simple. You can continue using the files from the previous chapter, but replace the entire contents of the CMakeLists.txt to the one below.
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 # ---- Replace everything with the text below -----
 cmake_minimum_required(VERSION 3.15)
@@ -51,23 +37,23 @@ FetchContent_MakeAvailable(googletest)
 add_executable(HelloWorld main.cpp)
 target_link_libraries(HelloWorld PRIVATE gtest_main)
 ```
-{% endcode %}
+
 
 2. Run cmake. This will download the googletest repo when it encounters `FetchContent_MakeAvailable`.
 
-{% code title="sh" overflow="wrap" %}
+
 ```sh
 cmake ..
 ```
-{% endcode %}
+
 
 3. Run the build
 
-{% code title="sh" overflow="wrap" %}
+
 ```sh
 cmake --build .
 ```
-{% endcode %}
+
 
 ## Quiz
 

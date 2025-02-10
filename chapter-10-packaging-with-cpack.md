@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Packaging with CPack
 
 ## Introduction
@@ -34,7 +20,7 @@ Let’s create a simple project and package it for macOS.
 
 1. Update your `CMakeLists.txt`:
 
-{% code title="CMakeLists.txt" overflow="wrap" %}
+
 ```cmake
 cmake_minimum_required(VERSION 3.10)
 project(HelloWorld)
@@ -49,11 +35,11 @@ set(CPACK_PACKAGE_DESCRIPTION "A simple program packaged with CPack")
 set(CPACK_GENERATOR "DragNDrop;TGZ")
 include(CPack)
 ```
-{% endcode %}
+
 
 2. Write `main.cpp`
 
-{% code title="main.cpp" overflow="wrap" lineNumbers="true" %}
+
 ```cpp
 #include <iostream>
 int main() {
@@ -61,11 +47,11 @@ int main() {
     return 0;
 }
 ```
-{% endcode %}
+
 
 3. Build and package the project:
 
-{% code title="sh" overflow="wrap" %}
+
 ```bash
 mkdir build
 cd build
@@ -73,11 +59,11 @@ cmake ..
 cmake --build .
 cpack
 ```
-{% endcode %}
+
 
 Output:
 
-{% code overflow="wrap" %}
+
 ```bash
 CPack: Create package using DragNDrop
 CPack: Install projects
@@ -92,7 +78,7 @@ CPack: - Install project: HelloWorld []
 CPack: Create package
 CPack: - package: /path/to/build/HelloWorld-1.0.0-Darwin.tar.gz generated.
 ```
-{% endcode %}
+
 
 4. Check the generated packages
 
@@ -124,4 +110,3 @@ You specify the type of package using the `CPACK_GENERATOR` variable (e.g., `Dra
 `include(CPack)` enables CPack and generates the necessary packaging targets.
 
 </details>
-
