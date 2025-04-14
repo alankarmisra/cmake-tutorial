@@ -54,7 +54,7 @@ cmake --build .
 4. Output:
 
 
-``` { .yaml .no-copy }
+```bash
 Hello, World!
 ```
 
