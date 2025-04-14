@@ -4,13 +4,13 @@
 
 CMake allows you to define variables and options to control the build process. Variables can store paths, flags, or other values, while options are boolean values that can be toggled on or off.
 
-## **Key Concepts**
+## Key Concepts
 
 * **`set()`**: Assigns a value to a variable.
 * **`option()`**: Defines a boolean option that can be toggled on or off.
 * **`if()`**: Used to conditionally execute CMake code.
 
-## **Code Sample**
+## Code Sample
 
 1. Continue using the files from the previous chapter. Edit the `CMakeLists.txt` file to define a variable and use it:
 

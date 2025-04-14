@@ -70,7 +70,7 @@ Test project /path/to/build
 ```
 
 
-## **Code Sample : Advanced Tests with GoogleTest**
+## Code Sample : Advanced Tests with GoogleTest
 
 Now let’s integrate GoogleTest for more sophisticated testing.
 
